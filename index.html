@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roblox DCF Presentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <p>Nicholas Low | Professor Lang | ECON 134A</p>
+      <p>Roblox (RBLX) DCF | March 13, 2026 Inputs | <a href="https://nlowucsb.github.io/Roblox-Sensitivity-Analysis/" target="_blank" rel="noopener noreferrer">Sensitivity Website</a></p>
+    </header>
+
+    <main class="deck">
+      <section class="slide reveal" id="s1">
+        <p class="kicker">DCF Valuation Presentation</p>
+        <h1>Roblox DCF Presentation</h1>
+        <p class="lead">Question: Is Roblox fairly priced at <strong>$56.42</strong>?</p>
+        <p class="lead">This presentation walks through exactly how each DCF input was selected, how free cash flow was projected, and how those assumptions produced an intrinsic value of <strong>$51.17</strong> per share.</p>
+        <div class="hero-grid">
+          <article><span>Intrinsic Value</span><strong data-count="51.17">$51.17</strong></article>
+          <article><span>Current Price</span><strong data-count="56.42">$56.42</strong></article>
+          <article><span>Conclusion</span><strong>~9.31% Overvalued</strong></article>
+        </div>
+      </section>
+
+      <section class="slide reveal" id="s2">
+        <h2>Model Flow</h2>
+        <div class="flow-grid">
+          <article><h3>1. Assumptions</h3><p>CAPM inputs, tax estimate, debt, shares.</p></article>
+          <article><h3>2. Forecast</h3><p>FCF projected from 2026 to 2030.</p></article>
+          <article><h3>3. Discounting</h3><p>Use average WACC to discount cash flows.</p></article>
+          <article><h3>4. Equity Value</h3><p>EV less net debt, divided by shares.</p></article>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Output</th><th>How It Was Derived</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Market Cap</td><td>Shares Outstanding x Current Share Price</td></tr>
+              <tr><td>Total Debt</td><td>Short-Term Debt + Long-Term Debt</td></tr>
+              <tr><td>Cost of Debt</td><td>Interest Expense / Total Debt</td></tr>
+              <tr><td>Cost of Equity</td><td>Risk-Free Rate + Beta x Market Risk Premium</td></tr>
+              <tr><td>WACC</td><td>Equity Weight x Cost of Equity + Debt Weight x Cost of Debt x (1 - Tax)</td></tr>
+              <tr><td>Intrinsic Value / Share</td><td>(Enterprise Value - Net Debt) / Shares Outstanding</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="slide reveal" id="s3">
+        <h2>Key Assumptions</h2>
+        <div class="assumption-grid">
+          <article><span>Risk-Free Rate</span><strong>4.28%</strong></article>
+          <article><span>Beta</span><strong>1.80</strong></article>
+          <article><span>MRP (Low/High)</span><strong>4.18% / 5.10%</strong></article>
+          <article><span>Tax Rate</span><strong>25.00%</strong></article>
+          <article><span>Cost of Debt</span><strong>2.30%</strong></article>
+          <article><span>Shares Outstanding</span><strong>661.64M</strong></article>
+          <article><span>Total Debt</span><strong>$1.81B</strong></article>
+          <article><span>Net Debt Used</span><strong>$596.25M</strong></article>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Input</th><th>Value</th><th>Source</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Risk-Free Rate</td><td>4.28%</td><td>FRED 10Y</td></tr>
+              <tr><td>Beta</td><td>1.80</td><td>MarketWatch</td></tr>
+              <tr><td>MRP (Low / High)</td><td>4.18% / 5.10%</td><td>AlphaSpread / ValueInvesting</td></tr>
+              <tr><td>Tax Rate</td><td>25.00%</td><td>Workbook assumption note</td></tr>
+              <tr><td>Shares Outstanding</td><td>661.64M</td><td>MarketWatch</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="lead">Tax assumption logic: since Roblox reported negative pre-tax income in 2025, using a historical effective tax ratio would be misleading. I used a 25% estimate supported by federal/state framing and peer context in the workbook notes.</p>
+      </section>
+
+      <section class="slide reveal" id="s4">
+        <h2>WACC Build</h2>
+        <div class="wacc-grid">
+          <article><span>Cost of Equity (Low)</span><strong>11.80%</strong></article>
+          <article><span>Cost of Equity (High)</span><strong>13.46%</strong></article>
+          <article><span>WACC (Low)</span><strong>11.34%</strong></article>
+          <article><span>WACC (High)</span><strong>12.92%</strong></article>
+          <article class="highlight"><span>Average WACC</span><strong>12.13%</strong></article>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>WACC Component</th><th>Workbook Result</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cost of Equity (Low)</td><td>4.28% + 1.8 x 4.18% = 11.80%</td></tr>
+              <tr><td>Cost of Equity (High)</td><td>4.28% + 1.8 x 5.10% = 13.46%</td></tr>
+              <tr><td>WACC (Low)</td><td>11.34%</td></tr>
+              <tr><td>WACC (High)</td><td>12.92%</td></tr>
+              <tr><td>Discount Rate Used</td><td>Average = 12.13%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="slide reveal" id="s5">
+        <h2>FCF Forecast (USD Billions)</h2>
+        <div class="chart" id="fcf-chart"></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Year</th><th>FCF</th><th>Growth</th><th>How I Set It</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>2025A</td><td>$1.353B</td><td>16.0%</td><td>Base year from historical FCF in workbook references</td></tr>
+              <tr><td>2026E</td><td>$1.710B</td><td>26.4%</td><td>Midpoint of guidance range ($1.60B-$1.82B)</td></tr>
+              <tr><td>2027E</td><td>$2.086B</td><td>22.0%</td><td>Conservative upper growth year</td></tr>
+              <tr><td>2028E</td><td>$2.503B</td><td>20.0%</td><td>Moderating growth assumption</td></tr>
+              <tr><td>2029E</td><td>$3.004B</td><td>20.0%</td><td>Sustained but controlled growth</td></tr>
+              <tr><td>2030E</td><td>$3.545B</td><td>18.0%</td><td>Taper into terminal stage</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="slide reveal" id="s6">
+        <h2>Conclusion</h2>
+        <p class="lead">Base case indicates Roblox is modestly overvalued versus current price. The most important point in defending this model is that every output is traceable to a clear assumption path and documented source choice.</p>
+        <ul class="conclusion-list">
+          <li>Result: $51.17 intrinsic value versus $56.42 market price.</li>
+          <li>Method: CAPM-driven WACC, explicit 5-year FCF projection, then terminal value.</li>
+        </ul>
+      </section>
+    </main>
+
+    <nav class="side-nav">
+      <a href="#s1">1</a><a href="#s2">2</a><a href="#s3">3</a><a href="#s4">4</a><a href="#s5">5</a><a href="#s6">6</a>
+    </nav>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
